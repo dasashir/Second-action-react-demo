@@ -1,13 +1,12 @@
 name: test project
-on: workflow_dispatch
+on: push
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    -name: get code 
-     uses: actions/checkout@v5
-    -name: install dependency
-     run: npm ci
-    -name: run test
-     run: npm test
-
+      - name: get code
+        uses: actions/checkout@v5
+      - name: install dependency
+        run: npm ci
+      - name: run test
+        run: npm test
