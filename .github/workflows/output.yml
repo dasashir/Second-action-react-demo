@@ -1,15 +1,8 @@
-name: output project
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-  jobs:
-    output:
-      runs-on: ubuntu-latest
-      steps:
-        - name: get info
-          run: echo "${{(tojson(github))}}" > info.json
-
-
-        
+name: Output information
+on: workflow_dispatch
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output GitHub context
+        run: echo "${{ toJSON(github) }}"
