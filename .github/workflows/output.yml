@@ -1,0 +1,11 @@
+name: output project
+on: [push,workflow_dispatch]
+  jobs:
+    output:
+      runs-on: ubuntu-latest
+      steps:
+        - name: get info
+          run: echo "${{(tojson(github))}}" > info.json
+          
+
+        
